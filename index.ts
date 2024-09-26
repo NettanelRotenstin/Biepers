@@ -1,5 +1,6 @@
 import express, { Express } from 'express'
 import 'dotenv/config'
+import beeperController from './controllers/beeperController'
  
 const app: Express = express()
 
@@ -7,7 +8,7 @@ const PORT:number = 1234
  
 app.use(express.json())
 
-app.use('api/beepers', beeperController)
+app.use('/api/beepers',beeperController )
  
  
 

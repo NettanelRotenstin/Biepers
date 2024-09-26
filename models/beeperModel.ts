@@ -17,7 +17,7 @@ class Beeper {
     ) {
         this.id = v4();
         this.status = statusEnum.manufactured
-        this.timeCreated = dateAndTime.toLocaleDateString()
+        this.timeCreated = dateAndTime.toLocaleString()
     }
 }
 export default Beeper
