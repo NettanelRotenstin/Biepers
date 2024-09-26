@@ -1,20 +1,29 @@
-import express, { Express } from 'express'
-import 'dotenv/config'
- 
-const app: Express = express()
+import express, { Router, Request, Response } from 'express'
+import newBeeperDTO from '../DTO/beeperDTO'
 
-const PORT:number = 1234
-
-app.use(express.json())
-
-app.use('api/beepers', beeperController)
- 
- 
+const router: Router = express.Router()
 
 
-
-
-
-app.listen(process.env.PORT, (): void => {
-    console.log(`server started on port : ${process.env.PORT} visit http://localhost:${process.env.PORT} `);
+//create new beeper
+router.post("/",async(req: Request<any, any, newBeeperDTO>, res: Response): Promise<void> => {
+    
 })
+
+//get all beepers
+router.get("/",async (req:Request, res:Response): Promise< void> =>{})
+
+//details one beeper
+router.get("/:id",async (req:Request, res:Response): Promise< void> =>{})
+
+
+//update status of one beeper
+router.patch("/:id/status")
+
+
+//delete one beeper
+router.delete("/:id")
+
+//get beepers by status
+router.get("/status/:status")
+
+export default router  
